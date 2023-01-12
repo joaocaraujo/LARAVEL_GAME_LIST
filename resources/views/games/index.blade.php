@@ -23,29 +23,32 @@
             </div>
         </div>
         <table class="table table-dark table-striped mt-3">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
+<thead>
+    <tr>
+        <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Category</th>
         <th scope="col">Year of Creation</th>
         <th scope="col">Price (R$)</th>
+        <th scope="col">Actions</th>
     </tr>
 </thead>
 <tbody>
     @foreach ($games as $game)
     <tr>
         <th>{{$game->id}}</th>
-        <td>{{$game->name}}</td>
-        <td>{{$game->category}}</td>
-            <td>{{$game->year_creation}}</td>
-            <td>R${{$game->price}},00</td>
+        <th>{{$game->name}}</th>
+        <th>{{$game->category}}</th>
+        <th>{{$game->year_creation}}</th>
+        <th>R${{$game->price}},00</th>
+        <th><a href="{{ route('games-edit', ['id'=>$game->id]) }}" class="btn btn-primary"><ion-icon name="create-outline"></ion-icon></a></th>
         </tr>
         @endforeach
     </tbody>
 </table>
 </div>
-
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
 
