@@ -48,4 +48,10 @@ class GamesController extends Controller
         return redirect()->route('games-index');
     }
 
+    public function destroy($id) {
+
+        Game::where('id', $id)->delete();
+        return redirect()->route('games-index');
+    }
+
 }

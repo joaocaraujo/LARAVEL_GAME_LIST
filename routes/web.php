@@ -21,6 +21,7 @@ Route::prefix('games')->group(function() {
     Route::post('/', [GamesController::class, 'store'])->name('games-store');
     Route::get('/{id}/edit', [GamesController::class, 'edit'])->where('id', '[0-9]+')->name('games-edit');
     Route::put('/{id}', [GamesController::class, 'update'])->where('id', '[0-9]+')->name('games-update');
+    Route::delete('/{id}', [GamesController::class, 'destroy'])->where('id', '[0-9]+')->name('games-destroy');
 });
 
 Route::fallback(function () {

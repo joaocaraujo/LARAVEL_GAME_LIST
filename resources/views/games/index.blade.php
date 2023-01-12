@@ -41,7 +41,16 @@
         <th>{{$game->category}}</th>
         <th>{{$game->year_creation}}</th>
         <th>R${{$game->price}},00</th>
-        <th><a href="{{ route('games-edit', ['id'=>$game->id]) }}" class="btn btn-primary"><ion-icon name="create-outline"></ion-icon></a></th>
+    <th class="d-flex">
+        <a href="{{ route('games-edit', ['id'=>$game->id]) }}" class="btn btn-primary me-2">
+            <ion-icon name="create-outline"></ion-icon>
+        </a>
+        <form action="{{ route('games-destroy', ['id'=>$game->id]) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button>
+        </form>
+    </th>
         </tr>
         @endforeach
     </tbody>
