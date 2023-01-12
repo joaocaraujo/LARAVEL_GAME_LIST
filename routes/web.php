@@ -1,5 +1,7 @@
 <?php
 
+use App\http\Controllers\GamesController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/games', [GamesController::class, 'index']);
+
+Route::fallback(function () {
+    return "**ROUTE ERROR**";
 });
+
+//Route::get('/games', class::GamesController);
