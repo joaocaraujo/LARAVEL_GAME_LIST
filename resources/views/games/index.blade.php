@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'List')
+@section('title', 'Your games')
 
 @section('content')
 
@@ -13,29 +13,38 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>List of available games:</h1>
-<table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-11">
+                <h1>Your game list:</h1>
+            </div>
+            <div class="col-sm-1">
+                <a href="{{ route('games-create') }}" class="btn btn-success">Add new</a>
+            </div>
+        </div>
+        <table class="table table-dark table-striped mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Category</th>
         <th scope="col">Year of Creation</th>
         <th scope="col">Price (R$)</th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($games as $game)
-        <tr>
-            <th>{{$game->id}}</th>
-            <td>{{$game->name}}</td>
-            <td>{{$game->category}}</td>
+    </tr>
+</thead>
+<tbody>
+    @foreach ($games as $game)
+    <tr>
+        <th>{{$game->id}}</th>
+        <td>{{$game->name}}</td>
+        <td>{{$game->category}}</td>
             <td>{{$game->year_creation}}</td>
-            <td>{{$game->price}}</td>
+            <td>R${{$game->price}},00</td>
         </tr>
         @endforeach
     </tbody>
-  </table>
+</table>
+</div>
 
 </body>
 </html>

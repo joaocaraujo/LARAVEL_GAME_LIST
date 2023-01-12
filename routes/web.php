@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/games', [GamesController::class, 'index']);
+Route::prefix('games')->group(function() {
+    Route::get('/', [GamesController::class, 'index'])->name('games-index');
+    Route::get('/create', [GamesController::class, 'create'])->name('games-create');
+    Route::post('/', [GamesController::class, 'store'])->name('games-store');
+});
 
 Route::fallback(function () {
     return "**ROUTE ERROR**";

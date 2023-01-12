@@ -13,4 +13,16 @@ class GamesController extends Controller
         return view('games.index', ['games' => $games]);
     }
 
+    public function create() {
+
+        return view('games.create');
+
+    }
+
+    public function store(Request $request) {
+
+        Game::create($request->all());
+        return redirect('/games');
+    }
+
 }
