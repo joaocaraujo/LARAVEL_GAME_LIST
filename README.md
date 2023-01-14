@@ -1,3 +1,8 @@
+#GameList
+
+This project is a simple CRUD that shows a list of Games for sale, which are saved in the database, with the option to edit, add or delete each one of them. I developed this project with the objective of training some basic functionalities with Laravel, such as the use of Controllers, Migrations, Model, View (Blade with HTML and CSS), among others.
+____________________________________________________________________________________________________________
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
